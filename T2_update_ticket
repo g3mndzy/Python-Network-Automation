@@ -1,0 +1,66 @@
+"""
+Updates a DNS incident ticket in the help desk web service
+to show that the issue has been resolved.
+"""
+
+import requests
+
+
+HELPDESK_URL = "http://helpdesk.d522.wgu.internal:5000/api/tickets"
+
+HEADERS = {
+    "Authorization": "Bearer vGkbXkGLqQSo7YLflp9DutuG8st4xdPPF7wnTcwB0FE",
+    "Content-Type": "application/json"
+}
+
+
+def update_dns_ticket(ticket_id):
+    """Update a DNS ticket to resolved."""
+
+    update_url = f"{HELPDESK_URL}/{ticket_id}"
+
+    resolution_data = {
+        "status": "resolved",
+        "description": (
+            "Device Name: PC2\n"
+            "IP Address: 192.168.20.100\n"
+            "Issue Type: DNS Setting Altered\n\n"
+            "The altered DNS setting was corrected to 10.10.10.20. "
+            "The DNS issue has been resolved."
+        )
+    }
+
+    try:
+        response = requests.patch(
+            update_url,
+            headers=HEADERS,
+            json=resolution_data,
+            timeout=10
+        )
+
+        if response.status_code in (200, 204):
+            print(f"Ticket {ticket_id} successfully updated to resolved.")
+
+            if response.text:
+                print(response.json())
+
+            return True
+
+        print(f"Failed to update ticket {ticket_id}.")
+        print("Status code:", response.status_code)
+        print("Response:", response.text)
+
+        return False
+
+    except requests.RequestException as error:
+        print(f"Web service request failed: {error}")
+        return False
+
+
+def main():
+    dns_ticket_id = 5  
+    update_dns_ticket(dns_ticket_id)
+
+
+if __name__ == "__main__":
+    main()

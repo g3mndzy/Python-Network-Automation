@@ -1,0 +1,17 @@
+Device ID,Device Name,Device Address,Subnet Mask,Location,Access Port,OS,Username,Password
+1001,API,10.10.10.200,255.255.255.0,Services ,5008,Ubuntu,ubuntu,ubuntu
+1002,DB,10.10.10.210,255.255.255.0,Services ,5011,Ubuntu,ubuntu,ubuntu
+1003,DNS1,10.10.10.10,255.255.255.0,Services ,5013,Ubuntu,ubuntu,ubuntu
+1004,DNS2,10.10.10.20,255.255.255.0,Services ,5017,Ubuntu,ubuntu,ubuntu
+1005,PC1,192.168.10.102,255.255.255.0,Site1,5032,Ubuntu,ubuntu,ubuntu
+1006,PC2,192.168.20.100,255.255.255.0,Site1,5029,Ubuntu,ubuntu,ubuntu
+1007,PC3,192.168.30.101,255.255.255.0,Site1,5031,Ubuntu,ubuntu,ubuntu
+1008,PC4,192.168.10.101,255.255.255.0,Site2,5012,Ubuntu,ubuntu,ubuntu
+1009,ROUTER1,10.10.10.1,255.255.255.0,Main,5021,VyOS,vyos,vyos
+1010,SMTP,10.10.10.100,255.255.255.0,Services ,5019,Ubuntu,ubuntu,ubuntu
+1011,SVR1,192.168.20.210,255.255.255.0,Site2,5022,Ubuntu,ubuntu,ubuntu
+1012,SVR2,192.168.30.210,255.255.255.0,Site2,5014,Ubuntu,ubuntu,ubuntu
+1013,SW1,None,255.255.255.0,Main,5023,OpenvSwitch,none,none
+1014,SW2,None,255.255.255.0,Site1,5025,OpenvSwitch,none,none
+1015,SW3,None,255.255.255.0,Site2,5027,OpenvSwitch,none,none
+1016,SW4,None,255.255.255.0,Services ,5015,OpenvSwitch,none,none
