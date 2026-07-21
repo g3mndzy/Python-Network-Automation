@@ -7,7 +7,7 @@ from ping_devices import ping_device
 HELPDESK_URL = "http://helpdesk.d522.wgu.internal:5000/api/tickets"
 
 headers = {
-    "Authorization": "Bearer vGkbXkGLqQSo7YLflp9DutuG8st4xdPPF7wnTcwB0FE"
+    "Authorization": "Bearer {insert token}"
 }
 
 
